@@ -1,0 +1,9 @@
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\obj\Debug\nurl.csprojResolveAssemblyReference.cache
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\nurl.exe.config
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\nurl.exe
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\nurl.pdb
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\nunit.framework.dll
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\nunit.framework.xml
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\obj\Debug\nurl.exe
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\obj\Debug\nurl.pdb
+C:\Users\Diego\Documents\GitHub\CSharpProjectsExercices\Projects\nurl\bin\Debug\NDesk.Options.dll
