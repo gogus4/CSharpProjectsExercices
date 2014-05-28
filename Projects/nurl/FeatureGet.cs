@@ -46,11 +46,9 @@ namespace nurl
 			{
 				string data = Show(url);
 				
-				if(data.Equals("<h1>hello</h1>"))
-					return false;
-				
 				var file = new System.IO.StreamWriter(nameFile);
 				file.WriteLine(data);
+				file.Close();
 				
 				return true;
 			}

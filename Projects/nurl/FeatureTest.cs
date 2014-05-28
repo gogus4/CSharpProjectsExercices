@@ -19,5 +19,10 @@ namespace nurl
 		{
 			
 		}
+		
+		/*public float ShowDownloadTime(string url)
+		{
+			
+		}*/
 	}
 }

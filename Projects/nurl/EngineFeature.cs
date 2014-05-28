@@ -112,7 +112,11 @@ namespace nurl
 					FeatureGet get = new FeatureGet();
 					if(ArgumentsContainSave())
 					{
+						if(get.SaveUrlInFile(UrlValue,SaveValue))
+							Console.WriteLine("{0} file saved",SaveValue);
 						
+						else
+							Console.WriteLine("Error file saved");
 					}
 					
 					else
