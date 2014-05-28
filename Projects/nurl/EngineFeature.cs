@@ -138,7 +138,24 @@ namespace nurl
 				
 				if(ArgumentsContainUrl() && ArgumentsTimesIsCorrect())
 				{
-					// Create object FeatureTest and launch method				
+					FeatureTest test = new FeatureTest();
+					List<double> list_times = test.ShowDownloadTimesOfUrlWithNumberOfTimes(UrlValue,int.Parse(TimesValue));
+					
+					if(ArgumentsContainAvg())
+					{
+						Console.WriteLine("{0}",test.ShowAverageTimes(list_times));	
+					}
+					
+					else
+					{
+						for(int i = 0 ; i < list_times.Count ; i++)
+						{
+							Console.Write("{0} ",list_times[i]);
+						}
+					}
+					
+					// Create object FeatureTest and launch method		
+					Console.WriteLine();		
 					Console.WriteLine("Times : " + TimesValue);
 					Console.WriteLine("url : " + UrlValue);
 					Console.WriteLine("avg : " + AvgValue);

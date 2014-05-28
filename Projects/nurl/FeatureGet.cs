@@ -7,9 +7,9 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
-using System.Text;
 
 namespace nurl
 {
@@ -34,8 +34,9 @@ namespace nurl
 		       
 		        return reader.ReadToEnd();
 			}
-			catch(Exception E)
+			catch(WebException e)
 			{
+				Debug.WriteLine(e.Message);
 				return "<h1>hello</h1>";
 			}
 		}
@@ -52,8 +53,9 @@ namespace nurl
 				
 				return true;
 			}
-			catch(Exception E)
+			catch(Exception e)
 			{
+				Debug.WriteLine(e.Message);
 				return false;
 			}
 		}

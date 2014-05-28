@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
     <StartAction>Project</StartAction>
-    <StartArguments>get -url "http://tutoznet.free.fr/test.xml" -save "test.txt"</StartArguments>
+    <StartArguments>get -url "http://tutoznet.free.fr/test.xml" </StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>

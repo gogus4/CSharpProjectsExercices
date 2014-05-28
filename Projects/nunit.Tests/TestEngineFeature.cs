@@ -7,9 +7,20 @@ namespace nurl.Tests
 	[TestFixture]
 	public class TestEngineFeature
 	{	
-		#region FEATURE GET		
+		#region FEATURE GET	
+
 		[Test]
-		public void ArgumentsContainFeatureGet()
+		public void Arguments_contain_feature_is_boolean()
+		{
+			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsContainFeature().GetType());
+		}
+	
+		[Test]
+		public void Arguments_contain_geature_get()
 		{
 			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
 
@@ -19,7 +30,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsNotContainFeatureGet()
+		public void Arguments_not_contain_feature_get()
 		{
 			string[] args = { "-url", "\"http://abc\"", "-save", "file.txt" };
 
@@ -31,8 +42,9 @@ namespace nurl.Tests
 		#endregion
 		
 		#region FEATURE TEST	
+		
 		[Test]
-		public void ArgumentsContainFeatureTest()
+		public void Arguments_contain_feature_test()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5", "-avg" };
 
@@ -42,7 +54,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsNotContainFeatureTest()
+		public void Arguments_not_contain_feature_test()
 		{
 			string[] args = { "-url", "\"http://abc\"", "-times", "5", "-avg"};
 
@@ -53,9 +65,20 @@ namespace nurl.Tests
 		
 		#endregion
 	
-		#region ARGUMENTS PARSE			
+		#region ARGUMENTS PARSE		
+
 		[Test]
-		public void ArgumentsParseError()
+		public void Arguments_parse_is_boolean()
+		{
+			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsParseError().GetType());
+		}
+	
+		[Test]
+		public void Arguments_parse_error()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5", "-avg","-error" };
 
@@ -65,7 +88,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsParseNotError()
+		public void Arguments_parse_not_error()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5", "-avg" };
 
@@ -77,8 +100,19 @@ namespace nurl.Tests
 		#endregion
 		
 		#region URL ARGUMENT
+		
 		[Test]
-		public void ArgumentsContainUrl()
+		public void Arguments_contain_url_is_boolean()
+		{
+			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsContainUrl().GetType());
+		}
+		
+		[Test]
+		public void Arguments_contain_url()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5", "-avg" };
 
@@ -88,7 +122,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsNotContainUrl()
+		public void Arguments_not_contain_url()
 		{
 			string[] args = { "test","\"http://abc\"", "-times", "5", "-avg" };
 
@@ -100,7 +134,17 @@ namespace nurl.Tests
 		
 		#region SAVE ARGUMENT
 		[Test]
-		public void ArgumentsContainSave()
+		public void Arguments_contain_save_is_boolean()
+		{
+			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsContainSave().GetType());
+		}
+		
+		[Test]
+		public void Arguments_contain_save()
 		{
 			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
 
@@ -110,7 +154,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsNotContainSave()
+		public void Arguments_not_contain_save()
 		{
 			string[] args = { "get","\"http://abc\""};
 
@@ -122,7 +166,17 @@ namespace nurl.Tests
 		
 		#region AVG ARGUMENT
 		[Test]
-		public void ArgumentsNotContainAvg()
+		public void Arguments_contain_avg_is_boolean()
+		{
+			string[] args = { "get", "-url", "\"http://abc\"", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsContainAvg().GetType());
+		}
+		
+		[Test]
+		public void Arguments_not_contain_avg()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5" };
 
@@ -132,7 +186,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ArgumentsContainAvg()
+		public void Arguments_contain_avg()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5", "-avg" };
 
@@ -181,15 +235,6 @@ namespace nurl.Tests
 			{
 				Assert.AreEqual("Feature incorrect",E.Message);
 			}
-		}
-		
-		[Test]
-		public void StartMethodSuccessFeature()
-		{
-			string[] args = { "test","-url","\"http://abc\"", "-times", "5", "-avg" };
-
-			var engineFeature = new EngineFeature(args);
-			engineFeature.Start();
 		}
 		
 		[Test]

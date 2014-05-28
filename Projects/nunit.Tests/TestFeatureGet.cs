@@ -42,7 +42,7 @@ namespace nurl.Tests
 		#region SAVE FILE
 		
 		[Test]
-		public void SaveUrlTypeIsBoolean()
+		public void Save_url_type_is_boolean()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -52,7 +52,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void SaveUrlInFileSuccess()
+		public void Save_url_in_file_success()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -62,7 +62,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void SaveUrlInFileWithErrorUrl()
+		public void Save_url_in_file_with_error_url()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -72,7 +72,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void SaveUrlInFileWithErrorNameFile()
+		public void Save_url_file_with_error_name_file()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -82,7 +82,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void CheckIfFileIsCorrectlyFilled()
+		public void Check_if_file_is_correctly_filled()
 		{
 			var featureGet = new FeatureGet();
 			
