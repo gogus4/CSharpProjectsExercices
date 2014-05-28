@@ -104,12 +104,22 @@ namespace nurl
 			{
 				Console.WriteLine("GET");
 				
-				if(ArgumentsTimesIsCorrect() == true || ArgumentsContainAvg() == true)
-					throw new Exception("Erreur mélange arguments entre feature GET et TEST");
+				if(ArgumentsTimesIsCorrect() || ArgumentsContainAvg())
+					throw new Exception("Error arguments between GET and feature TEST");
 				
-				if(ArgumentsContainSave() && ArgumentsContainUrl())
+				if(ArgumentsContainUrl())
 				{
-					// Create object FeatureGet and launch method
+					FeatureGet get = new FeatureGet();
+					if(ArgumentsContainSave())
+					{
+						
+					}
+					
+					else
+					{
+						Console.WriteLine(get.Show(UrlValue));
+					}
+					
 					Console.WriteLine("Save : " + SaveValue);
 					Console.WriteLine("url : " + UrlValue);
 				}

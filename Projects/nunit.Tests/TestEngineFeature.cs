@@ -209,10 +209,23 @@ namespace nurl.Tests
 			}
 		}
 		
-		// Error arguments between GET and feature TEST
+		[Test]
+		public void StartMethodErrorMixtureBetweenGetAndTestArguments()
+		{
+			string[] args = { "test","-url","\"http://abc\"", "-times", "5", "-avg","-save","file.txt"};
+
+			var engineFeature = new EngineFeature(args);
+			
+			try
+			{
+				engineFeature.Start();
+			}
+			catch(Exception E)
+			{
+				Assert.AreEqual("Error arguments between GET and feature TEST",E.Message);
+			}
+		}
 		
 		#endregion
-		
-		
 	}
 }

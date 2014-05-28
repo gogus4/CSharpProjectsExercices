@@ -10,7 +10,7 @@ Scenario: Show the content of a page
     Then : the result should be `<h1>hello</h1>`
 
 Scenario: Save the content of a page
-    Given : I entered a fake url option `-url "http://fake"`
+    Given : I entered a fake url option `-url "fake.txt"`
     And : I enter the option `-save` with the value 'fake.txt'
     When : I press enter
     Then : a file called `fake.txt` should be created with the content `<h1>hello</h1>`

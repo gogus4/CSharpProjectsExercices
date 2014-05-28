@@ -23,7 +23,7 @@ namespace nurl
 			
 		}
 		
-		/*public string Show(string url)
+		public string Show(string url)
 		{
 			try
 			{
@@ -38,6 +38,26 @@ namespace nurl
 			{
 				return "<h1>hello</h1>";
 			}
-		}*/
+		}
+		
+		public bool SaveUrlInFile(string url,string nameFile)
+		{
+			try
+			{
+				string data = Show(url);
+				
+				if(data.Equals("<h1>hello</h1>"))
+					return false;
+				
+				var file = new System.IO.StreamWriter(nameFile);
+				file.WriteLine(data);
+				
+				return true;
+			}
+			catch(Exception E)
+			{
+				return false;
+			}
+		}
 	}
 }
