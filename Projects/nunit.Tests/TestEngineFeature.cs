@@ -18,7 +18,7 @@ namespace nurl.Tests
 			
 			Assert.AreEqual(typeof(Boolean), engineFeature.ArgumentsContainFeature().GetType());
 		}
-	
+		
 		[Test]
 		public void Arguments_contain_geature_get()
 		{
@@ -198,7 +198,7 @@ namespace nurl.Tests
 		
 		#region TEST ARGUMENTS TIMES
 		[Test]
-		public void ArgumentsTimesIsNotCorrect()
+		public void Arguments_times_is_not_correct()
 		{
 			string[] args = { "test", "-url", "\"http://abc\"", "-times", "5azbdsds", "-avg" };
 
@@ -221,7 +221,7 @@ namespace nurl.Tests
 		#region START METHOD
 		
 		[Test]
-		public void StartMethodFailFeature()
+		public void Start_method_fail_feature()
 		{
 			string[] args = { "testml","-url","\"http://abc\"", "-times", "5", "-avg" };
 
@@ -238,7 +238,42 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void StartMethodTooManyArguments()
+		public void Arguments_feature_get_missing()
+		{
+			string[] args = { "get", "-save", "file.txt" };
+
+			var engineFeature = new EngineFeature(args);
+			
+			try
+			{
+				engineFeature.Start();
+			}
+			catch(Exception e)
+			{
+				Assert.AreEqual("Error argument it missing url argument", e.Message);
+			}
+		}
+		
+		[Test]
+		public void Arguments_feature_test_missing()
+		{
+			string[] args = { "test","-url","\"http://abc\""};
+
+			var engineFeature = new EngineFeature(args);
+			
+			try
+			{
+				engineFeature.Start();
+			}
+			catch(Exception e)
+			{
+				Assert.AreEqual("Error argument it missing url argument or time is not correct", e.Message);
+			}
+		}
+	
+		
+		[Test]
+		public void Start_method_too_many_arguments()
 		{
 			string[] args = { "test","-url","\"http://abc\"", "-times", "5", "-avg","-error","-ok" };
 
@@ -255,7 +290,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void StartMethodErrorMixtureBetweenGetAndTestArguments()
+		public void Start_method_error_mixture_between_get_and_test_arguments()
 		{
 			string[] args = { "test","-url","\"http://abc\"", "-times", "5", "-avg","-save","file.txt"};
 

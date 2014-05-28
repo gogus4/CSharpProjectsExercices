@@ -14,10 +14,15 @@ namespace nurl
 	{
 		public static void Main(string[] args)
 		{
-			EngineFeature engine = new EngineFeature(args);
-			engine.Start();
-		
-			Console.Read();
+			try
+			{
+				EngineFeature engine = new EngineFeature(args);
+				engine.Start();
+			}
+			catch(Exception e)
+			{
+				Console.Write(e.Message);
+			}
 		}
 	}
 }

@@ -45,6 +45,7 @@ namespace nurl
 			catch(WebException e)
 			{
 				Debug.WriteLine(e.Message);
+				
 				return 0;
 			}
 		}

@@ -8,9 +8,6 @@
  */
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
 using NDesk.Options;
 
 namespace nurl
@@ -102,37 +99,34 @@ namespace nurl
 			
 			if(FeatureValue.ToLower().Equals("get"))
 			{
-				Console.WriteLine("GET");
-				
 				if(ArgumentsTimesIsCorrect() || ArgumentsContainAvg())
 					throw new Exception("Error arguments between GET and feature TEST");
 				
 				if(ArgumentsContainUrl())
 				{
 					FeatureGet get = new FeatureGet();
+					
 					if(ArgumentsContainSave())
 					{
 						if(get.SaveUrlInFile(UrlValue,SaveValue))
-							Console.WriteLine("{0} file saved",SaveValue);
+							Console.Write("{0} file saved",SaveValue);
 						
 						else
-							Console.WriteLine("Error file saved");
+							Console.Write("Error file saved");
 					}
 					
 					else
 					{
-						Console.WriteLine(get.Show(UrlValue));
+						Console.Write(get.Show(UrlValue));
 					}
-					
-					Console.WriteLine("Save : " + SaveValue);
-					Console.WriteLine("url : " + UrlValue);
 				}
+				
+				else
+					throw new Exception("Error argument it missing url argument");
 			}
 			
 			else if(FeatureValue.ToLower().Equals("test"))
 			{
-				Console.WriteLine("TEST");
-				
 				if(ArgumentsContainSave())
 					throw new Exception("Error arguments between GET and feature TEST");
 				
@@ -143,7 +137,7 @@ namespace nurl
 					
 					if(ArgumentsContainAvg())
 					{
-						Console.WriteLine("{0}",test.ShowAverageTimes(list_times));	
+						Console.Write("{0}",test.ShowAverageTimes(list_times));	
 					}
 					
 					else
@@ -153,13 +147,10 @@ namespace nurl
 							Console.Write("{0} ",list_times[i]);
 						}
 					}
-					
-					// Create object FeatureTest and launch method		
-					Console.WriteLine();		
-					Console.WriteLine("Times : " + TimesValue);
-					Console.WriteLine("url : " + UrlValue);
-					Console.WriteLine("avg : " + AvgValue);
 				}
+				
+				else
+					throw new Exception("Error argument it missing url argument or time is not correct");
 			}
 			
 			else

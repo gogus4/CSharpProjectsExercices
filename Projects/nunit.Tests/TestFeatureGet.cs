@@ -9,7 +9,7 @@ namespace nurl.Tests
 	{		
 		#region SHOW URL
 		[Test]
-		public void ShowWithSuccessUrl()
+		public void Show_with_success_url()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -19,7 +19,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ShowTypeIsString()
+		public void Show_type_is_string()
 		{
 			var featureGet = new FeatureGet();
 			
@@ -29,7 +29,7 @@ namespace nurl.Tests
 		}
 		
 		[Test]
-		public void ShowWithErrorUrl()
+		public void Show_with_error_url()
 		{
 			var featureGet = new FeatureGet();
 			

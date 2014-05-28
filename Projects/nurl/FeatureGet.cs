@@ -37,6 +37,7 @@ namespace nurl
 			catch(WebException e)
 			{
 				Debug.WriteLine(e.Message);
+				
 				return "<h1>hello</h1>";
 			}
 		}
@@ -56,6 +57,7 @@ namespace nurl
 			catch(Exception e)
 			{
 				Debug.WriteLine(e.Message);
+				
 				return false;
 			}
 		}
